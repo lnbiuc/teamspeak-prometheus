@@ -153,8 +153,6 @@ class Teamspeak3MetricService:
                 if teamspeak_metric_name in serverinfo:
                     PROMETHEUS_METRICS[teamspeak_metric_name].labels(virtualserver_name=virtualserver_name).set(
                         serverinfo[teamspeak_metric_name])
-                        
-            self.player_online.clear()
 
             # Get online players for this server
             clientlistResponse = self.serverQueryService.send_command(
